@@ -31,12 +31,10 @@ pipeline {
         stage('Push the artifacts'){
            steps{
                 script{		
-		 withDockerRegistry(credentialsId: 'docker-cred', url: 'https://hub.docker.com/') { 
                     sh '''
                     echo 'Push to Repo'
                     docker push aruncontainers/cicd-e2e:${BUILD_NUMBER}
-                    '''
-			}	
+                    '''	
                 }
             }
         }
