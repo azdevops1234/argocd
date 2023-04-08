@@ -21,7 +21,8 @@ pipeline {
                 script{
                     sh '''
                     echo 'Buid Docker Image'
-                    docker build -t aruncontainers/cicd-e2e:${BUILD_NUMBER} .
+		    sudo docker login
+                    sudo docker build -t aruncontainers/cicd-e2e:${BUILD_NUMBER} .
                     '''
                 }
             }
