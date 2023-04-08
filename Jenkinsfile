@@ -11,7 +11,8 @@ pipeline {
         stage('Checkout'){
            steps {
 
-		git branch: '/master', url: 'https://github.com/azdevops1234/argocd.git'
+		
+		git branch: 'master', credentialsId: 'gitid', url: 'https://github.com/azdevops1234/argocd.git'
            }
         }
 
